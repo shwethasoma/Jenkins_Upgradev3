@@ -1,25 +1,21 @@
-pipeline {
+pipeline
+{
       agent any
-      stages {
-            stage('Init') {
-                  steps {
-                        echo 'Hi, this is Anshul from LevelUp360'
-                        echo 'We are Starting the Testing'
+      stages
+      {
+            stage('Build Application')
+            {
+                  steps
+                  {
+                        sh 'mvn clean package'
                   }
-            }
-            stage('Build') {
-                  steps {
-                        echo 'Building Sample Maven Project'
-                  }
-            }
-            stage('Deploy') {
-                  steps {
-                        echo "Deploying in Staging Area"
-                  }
-            }
-            stage('Deploy Production') {
-                  steps {
-                        echo "Deploying in Production Area now"
+                  post
+                  {
+                        success
+                        {
+                              echo "Now archiving the artifact"
+                              archiveArtifacts artifacts:'**/*.war'
+                        }
                   }
             }
       }
