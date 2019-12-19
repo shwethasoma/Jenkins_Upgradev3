@@ -7,7 +7,7 @@ pipeline
             {
                   steps
                   {
-                         bat 'mvn clean package'
+                         bat 'mvn -f java-tomcat-sample/pom.xml clean package'
                   }
                   post
                   {
