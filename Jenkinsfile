@@ -18,5 +18,12 @@ pipeline
                         echo 'Building project'
                   }
             }
+            stage('Deploy')
+            {
+                  steps
+                  {
+                        echo 'Deployng project'
+                  }
+            }
       }
 }
