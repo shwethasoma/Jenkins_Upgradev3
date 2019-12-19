@@ -22,7 +22,7 @@ pipeline
     {
         steps
         {
-          build job:'Deploy_Staging'
+          build job:'Deploy_servlet_staging_env'
         }
     }
   }
