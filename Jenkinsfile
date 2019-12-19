@@ -3,19 +3,19 @@ pipeline
       agent any
       stages
       {
-            stage('Build Application')
+            stage('Init')
             {
                   steps
                   {
-                         bat 'mvn -f java-tomcat-sample/pom.xml clean package'
+                         echo 'Hi this is Shwetha'
                   }
-                  post
+                 
+            }
+            stage('Build')
+            {
+                  steps
                   {
-                        success
-                        {
-                              echo "Now archiving the artifact"
-                              archiveArtifacts artifacts:'**/*.war'
-                        }
+                        echo 'Building project'
                   }
             }
       }
