@@ -7,7 +7,7 @@ pipeline
             {
                   steps
                   {
-                        sh 'mvn clean package'
+                         'mvn clean package'
                   }
                   post
                   {
